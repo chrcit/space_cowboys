@@ -1,0 +1,143 @@
+#site-contact {
+  background-color: #acb1b6;
+}
+
+.contact-form {
+  font-family: $title-font;
+  padding: 1em 25%;
+  width: 100%;
+
+  @include breakpoint("max-width: 1024px") {
+    padding: 1em 15%;
+  };
+
+  @include breakpoint("max-width: 768px") {
+    padding: 1em 10%;
+  };
+
+  @include breakpoint("max-width: 512px") {
+    padding: 1em 5%;
+  };
+
+  .success-msg {
+    display: none;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  button {
+    background-color: $main-color;
+    border: none;
+    color: $black;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    font-family: $title-font;
+    margin: 1em auto;
+    font-size: 1em;
+    padding: 1em 3em;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px rgba($main-color, .5);
+    }
+  }
+}
+
+.contact-wrap {
+  @extend %cf;
+  width: 100%;
+
+}
+
+.input-wrap {
+  float: left;
+  width: 47.5%;
+
+  &:first-child {
+    margin-right: 5%;
+  }
+
+  @include breakpoint("max-width: 512px") {
+    float: none;
+    width: 100%;
+    margin: 0;
+  };
+
+  input,
+  textarea {
+    border: 2px solid $white;
+    border-radius: 5px 5px 5px 5px;
+    color: $black;
+    font-family: $title-font;
+    font-size: 1em;
+    padding: 1em 20% 1em 1em;
+    width: 100%;
+    max-width: 100%;
+    transition: color .3s linear, border .1s linear;
+
+    &.is-valid,
+    &.is-invalid {
+      background-repeat: no-repeat;
+      background-position: 95%;
+    }
+
+    &.is-valid {
+      background-image: url("../images/icons/form_valid.png");
+      color: #81c784;
+    }
+
+    &.is-invalid {
+      background-image: url("../images/icons/form_invalid.png");
+      color: #ef5350;
+      border: 2px solid #ef5350;
+    }
+  }
+
+  textarea.is-valid,
+  textarea.is-invalid {
+    background-position: 95% .75em;
+  }
+
+
+  input:focus,
+  textarea:focus {
+    outline:none;
+  }
+
+  input {
+    margin-bottom: 1em;
+    height: 3.5em;
+    @include breakpoint("min-width: 513px") {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  textarea {
+    min-height: 12.5em;
+    max-height: 12.5em;
+    height: 12.5em;
+  }
+
+  .error-msg {
+    color: #ef5350;
+    visibility: hidden;
+    opacity: 0;
+    font-size: .9em;
+    margin: .5em 0;
+    transition: visibility .3s ease-in-out,
+                opacity .3s ease-in-out;
+    &.is-active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+}

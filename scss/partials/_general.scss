@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+* {
+  transition: width .5s ease-in-out;
+}
+
+html,body {
+  overflow-x: hidden;
+  background: #dfdfe1;
+}
+
+::selection {
+  background: #484d52;
+  color: $white;
+}

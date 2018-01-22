@@ -1,0 +1,22 @@
+// Partials
+@import "partials/_fonts";
+@import "partials/_variables";
+@import "partials/_mixins";
+@import "partials/_reset";
+@import "partials/_animations";
+@import "partials/_general";
+
+// Modules
+@import "modules/header";
+@import "modules/hero";
+@import "modules/section";
+@import "modules/about";
+@import "modules/team";
+@import "modules/gallery";
+@import "modules/contact";
+@import "modules/footer";
+
+// Vendor Styles
+
+@import "vendor/lightgallery.scss";
+@import "vendor/slick.scss";

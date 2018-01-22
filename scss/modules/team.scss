@@ -1,0 +1,219 @@
+#site-team {
+  background: url("../images/team_space_bg.jpg");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  color: $white;
+
+  @include breakpoint("max-width: 640px") {
+    padding-bottom: 5em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-title,
+  .section-desc {
+    @include breakpoint("max-width: 640px") {
+      padding: 0 7.5%;
+    };
+
+    @include breakpoint("max-width: 512px") {
+      padding: 0 5%;
+    };
+  }
+}
+
+.team-list {
+  margin: 1em 0;
+  @extend %cf;
+}
+
+.team-el {
+  border-radius: 7px 7px 7px 7px;
+  cursor: pointer;
+  margin-bottom: 2em;
+  height: 10em;
+  font-family: $title-font;
+  float: left;
+  perspective: 1000px;
+  outline: none !important;
+  transition: 1s transform;
+  width: 31.5%;
+
+  @include breakpoint("min-width: 1025px") {
+    width: 31%;
+    margin-right: 3.5%;
+    margin-bottom: 1em;
+
+    &:last-child,
+    &:nth-child(3n+0) {
+      margin-right: 0;
+    }
+
+    &:nth-child(4) {
+      margin-left: 18.5%;
+    }
+  };
+
+  @include breakpoint("max-width: 1024px") {
+    width: 47.5%;
+    margin-right: 5%;
+    margin-bottom: 1em;
+
+    &:nth-child(2n+0) {
+      margin-right: 0;
+    }
+  };
+
+  @include breakpoint("max-width: 640px") {
+    margin: 0;
+  };
+
+  &.is-active .flipper {
+    transform: rotateY( 180deg );
+  }
+
+  .flipper {
+    height: 100%;
+    width: 100%;
+    transition: .6s transform ease-in;
+  	transform-style: preserve-3d;
+  	position: relative;
+  }
+
+  .profil,
+  .quote {
+    backface-visibility: hidden;
+    border-radius: 7px 7px 7px 7px;
+    height: 100%;
+    left: 0;
+  	position: absolute;
+    width: 100%;
+    top: 0;
+  }
+
+  .profil {
+    background-color: rgba(232, 232, 231, .1);
+    height: 100%;
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+
+  .quote {
+    transform: rotateY(180deg);
+  }
+
+  .team-el-info,
+  .team-el-img {
+    position: absolute;
+    width: 50%;
+  }
+
+  .team-el-img {
+    background-position: top;
+    background-size: cover;
+    border-radius: 7px 7px 7px 7px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  .team-el-info {
+    padding: 2em 1em 1em 1em;
+    left: 50%;
+    text-transform: uppercase;
+  }
+
+  .team-el-info span {
+    display: block;
+    font-size: .8em;
+  }
+
+  .team-el-name {
+    font-size: 1.2em;
+
+    @include breakpoint("max-width: 640px") {
+      font-size: 1em;
+    };
+  }
+
+  .team-el-title {
+    margin: 1em 0;
+  }
+
+  .quote {
+    background-image: linear-gradient(to top right, #1E252C 0%, #0E1114 100%);
+    padding: 1em 10%;
+    outline: 1px solid transparent; // Hack: Fixes white border when flipping (in Chrome)
+    text-align: center;
+
+    .team-quote-author {
+      color: #484d52;
+      font-size: .65em;
+      font-family: $title-font;
+      text-transform: uppercase;
+    }
+
+    .team-quote {
+      line-height: 1.3em;
+      margin: 1em 0;
+      font-family: $text-font;
+      font-size: 1.1em;
+      font-style: oblique;
+
+      &:before {
+        content: "\201C";
+      }
+
+      &:after {
+        content: "\201D";
+      }
+    }
+  }
+}
+
+// Team Carousel
+
+.slick-list {
+  overflow: visible !important;
+}
+.slick-slide {
+  height: 10em !important;
+  margin: 0 10px !important;
+}
+
+.slick-arrow {
+  position: absolute;
+  bottom: -60px;
+}
+
+.slick-prev {
+  left: 30px;
+}
+
+.slick-next {
+  right: 30px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  li {
+    background: #575b64;
+    border-radius: 50% 50%;
+    display: inline-block;
+    margin: .5em;
+    width: 15px;
+    height: 15px;
+    &.slick-active {
+      background: #acb1b6;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}

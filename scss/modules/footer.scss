@@ -1,0 +1,21 @@
+.site-footer {
+  @extend .come-in;
+  background-color: #161b20;
+  padding: 2em 0;
+  text-align: center;
+
+  .copyright,
+  .footer-logo {
+    display: block;
+  }
+
+  .copyright {
+    color: #484d52;
+    font-family: $title-font;
+    font-size: .9em;
+  }
+
+  .footer-logo {
+    margin: 1em auto 0 auto;
+  }
+}

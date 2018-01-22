@@ -1,0 +1,95 @@
+#site-about {
+  background-color: #dfdfe1;
+}
+
+.about-list {
+  @extend %cf;
+  margin: 3em 0;
+  width: 100%;
+
+  @include breakpoint("max-width: 600px") {
+    margin: 3em 0 1em 0;
+  }
+
+  .about-el {
+    background: rgba(252, 252, 255, 1);
+    box-sizing: padding-box;
+    border-radius: 3px 3px 3px 3px;
+    float: left;
+    margin-right: 3.5%;
+    padding: 2.5em;
+    position: relative;
+    transition: all .4s ease-in;
+    text-align: center;
+    width: 31%;
+
+
+    @include breakpoint("min-width: 1377px") {
+      height: 14em;
+      padding: 2.5em 1.5em;
+    };
+
+    @include breakpoint("max-width: 1376px") {
+      height: 18em;
+      padding: 2.5em 1.5em;
+    };
+
+    @include breakpoint("max-width: 1024px") {
+      height: 19em;
+      padding: 2.5em 1.5em;
+    };
+
+    @include breakpoint("max-width: 768px") {
+      height: 20em;
+      padding: 2.5em 1em;
+    };
+
+    @include breakpoint("max-width: 600px") {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+      margin-bottom: 3em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    };
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(252, 252, 255, 1);
+
+      .about-icon {
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+
+  .about-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: calc(50% - 50px/2);
+    top: -25px;
+    transition: transform .4s ease-in;
+    img {
+      width: 100%;
+    }
+  }
+
+  .about-title {
+    font-family: $title-font;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+  }
+
+  .about-desc {
+    font-family: $text-font;
+    line-height: 1.4em;
+    font-size: .9em;
+  }
+}

@@ -1,0 +1,130 @@
+#site-gallery {
+  background-color: #161b20;
+  color: $white;
+}
+
+.image-list {
+  @extend %cf;
+
+
+  .image {
+    cursor: pointer;
+    float: left;
+    margin-bottom: 1em;
+
+    img {
+      width: 100%;
+    }
+
+    @include breakpoint("min-width: 1025px") {
+      margin: 0;
+      margin-right: 2%;
+      margin-bottom: 1em;
+      width: 15%;
+      &:nth-child(6n+0) {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint("max-width: 1024px") {
+      margin: 0;
+      margin-right: 2%;
+      margin-bottom: 1em;
+      width: 18%;
+
+      &:nth-child(5n+0) {
+        margin-right: 0;
+      }
+
+      &:nth-child(6n+0){
+        margin-right: 2%;
+      }
+    };
+
+    @include breakpoint("max-width: 768px") {
+      margin: 0;
+      margin-right: 3.3333%;
+      margin-bottom: 1em;
+      width: 22.5%;
+
+      &:nth-child(4n+0) {
+        margin-right: 0;
+      }
+
+      &:nth-child(6n+0),
+      &:nth-child(5n+0) {
+        margin-right: 3.3333%;
+      }
+    };
+
+    @include breakpoint("max-width: 512px") {
+      width: 31%;
+      margin: 0;
+      margin-right: 3.5%;
+      margin-bottom: 1em;
+
+      &:nth-child(3n+0) {
+        margin-right: 0;
+      }
+
+      &:nth-child(5n+0),
+      &:nth-child(4n+0) {
+        margin-right: 3.5%;
+      }
+    };
+  }
+}
+
+// Gallery Restyling
+
+.lg-close {
+  position: absolute;
+  left: 50%;
+  float: none !important;
+  top: 50px;
+  transform: translateX(-50%);
+}
+
+.lg-sub-html {
+  font-family: $title-font;
+  font-size: .9em;
+  bottom: 10% !important;
+}
+
+.lg-img-wrap {
+  @include breakpoint("min-width: 769px") {
+    padding: 150px !important;
+  };
+}
+
+.lg-prev,
+.lg-next,
+.lg-close {
+  background: none !important;
+  &:before,
+  &:after {
+    content: "" !important;
+  }
+}
+
+.lg-next,
+.lg-prev {
+  @include breakpoint("max-width: 768px") {
+    display: none !important;
+  };
+}
+.lg-prev {
+  left: 0 !important;
+}
+
+.lg-next {
+  right: 0 !important;
+}
+
+.lg-close {
+  background-image: url("../images/icons/gallery_close.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  height: 40px !important;
+  width: 40px !important;
+}

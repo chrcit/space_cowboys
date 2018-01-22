@@ -1,0 +1,38 @@
+.site-section {
+  @extend .come-in;
+  @include breakpoint("min-width: 1368px") {
+    padding: 1.5em 20%;
+  };
+
+  @include breakpoint("max-width: 1368px") {
+    padding: 1.5em 15%;
+  };
+
+  @include breakpoint("max-width: 1024px") {
+    padding: 1.5em 10%;
+  };
+
+  @include breakpoint("max-width: 768px") {
+    padding: 1.5em 7.5%;
+  };
+
+  @include breakpoint("max-width: 512px") {
+    padding: 1.5em 5%;
+  };
+}
+
+.section-title {
+  font-family: $title-font;
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-desc {
+  font-family: $text-font;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 2em;
+  text-align: center;
+}

@@ -1,0 +1,157 @@
+.site-header {
+  @extend %cf;
+  padding: 1em 15%;
+  position: fixed;
+  transition: background .2s ease-in;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+
+  @include breakpoint("min-width: 1368px") {
+    padding: 1.5em 20%;
+  };
+
+  @include breakpoint("max-width: 1368px") {
+    padding: 1.5em 15%;
+  };
+
+  @include breakpoint("max-width: 1024px") {
+    padding: 1.5em 10%;
+  };
+
+  @include breakpoint("max-width: 768px") {
+    padding: 1.5em 7.5%;
+  };
+
+  @include breakpoint("max-width: 512px") {
+    padding: 1.5em 5%;
+  };
+
+  &.is-fixed {
+    background: rgb(64, 72, 79);
+  }
+}
+
+.site-logo {
+  cursor: pointer;
+  float: left;
+  position: relative;
+  transition: transform .25s linear;
+  z-index: 200;
+
+  .site-header.is-fixed &,
+  &.is-active {
+    transform: rotate(-45deg);
+  }
+}
+
+.site-navigation {
+  float: right;
+  font-family: $title-font;
+  transition: all .2s ease-in;
+
+  @include breakpoint("max-width: 768px") {
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(22, 27, 32, .99);
+    float: none;
+    left: 0;
+    top: 0;
+    position: absolute;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+  };
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1.0;
+    z-index: 100;
+  }
+
+
+  ul {
+    @extend %cf;
+    @include breakpoint("max-width: 768px") {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .nav-el {
+    padding: .5em 1em;
+    text-transform: uppercase;
+    position: relative;
+    float: left;
+
+    @include breakpoint("max-width: 768px") {
+      float: none;
+      font-size: 2em;
+      text-align: center;
+      width: 100%;
+    }
+
+    a {
+      transition: color .5s ease-in;
+      color: $white;
+      display: block;
+      line-height: 1.6em;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: $main-color;
+        visibility: hidden;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: .25s linear;
+      }
+
+      &:hover,
+      &.is-active {
+        color: $main-color;
+        &:before {
+          visibility: visible;
+          transform: scaleX(.8);
+        }
+      }
+    }
+  }
+}
+
+.mobile-navigation-switch {
+  border: 1px solid #fff;
+  border-radius: 3px 3px 3px 3px;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+  float: right;
+  font-family: $title-font;
+  padding: .5em 1em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 200;
+
+  @include breakpoint("max-width: 768px") {
+    display: inline-block;
+  };
+
+  &:before {
+    content: "MENU";
+  }
+
+  &.is-active:before {
+    content: "x CLOSE";
+  }
+}

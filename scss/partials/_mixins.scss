@@ -1,0 +1,13 @@
+// Clearfix placeholder selector
+// Includeable via @extend %cf
+%cf {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin breakpoint($query) {
+  @media ($query) { @content; }
+}

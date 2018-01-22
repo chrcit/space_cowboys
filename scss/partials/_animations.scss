@@ -1,0 +1,36 @@
+.come-in {
+  transform: translateY(150px);
+  animation: come-in .7s ease forwards;
+  opacity: 0;
+}
+
+.come-in-reverse {
+  transform: translateY(-150px);
+  animation: come-in-reverse 1.4s ease forwards;
+}
+
+@keyframes come-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes come-in-reverse {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
