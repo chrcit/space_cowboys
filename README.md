@@ -5,7 +5,7 @@ It's not perfect but it's a good starting place for people who want to learn res
 
 It took about 22 hours to code from start to finish.
 
-You can check it out live here: https://christiancito.github.io/space_cowboys/
+You can check it out live here: https://space-cowboys.vercel.app/
 
 ## External Sources
 
